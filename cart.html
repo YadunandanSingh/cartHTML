@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background-color: antiquewhite;
+        }
+
+        .itembox {
+            width: 40%;
+            height: 70%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cart {
+            width: 40%;
+            height: 70%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table{
+            margin-top: 30px;
+        }
+        td{
+            width: 100px;
+        }
+        tr{
+            text-align: center;
+        }
+        input{
+            width: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="itembox">
+            <h1>Item box</h1>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount</th >
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td>tomato</td>
+                    <td>30 kg</td>
+                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                </tr>
+                <tr>
+                    <td>onion</td>
+                    <td>25 kg</td>
+                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                </tr>
+                <tr>
+                    <td>red capsicum</td>
+                    <td>25 kg</td>
+                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                </tr>
+                <tr>
+                    <td>patato</td>
+                    <td>20 kg</td>
+                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                </tr>
+                <tr>
+                    <td>Capsicum</td>
+                    <td>25 kg</td>
+                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                </tr>
+
+            </table>
+            <button class="addbtn" onclick="getitem()">add cart</button>
+        </div>
+
+        <div class="cart">
+            <h1>Cart</h1>
+        </div>
+
+        
+    </div>
+
+    <script>
+        var itembox = document.getElementById("itembox")
+        var cart = document.getElementById("cart")
+
+        getitem = () =>{
+            var itemcount = document.getElementById("count")
+            console.log(itemcount)
+        }
+
+        additem = ()=>{
+            
+        }
+    </script>
+</body>
+
+</html>
