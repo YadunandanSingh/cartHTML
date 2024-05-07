@@ -62,35 +62,46 @@
                 <tr>
                     <td>tomato</td>
                     <td>30 kg</td>
-                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                    <td> <button name="tomato" id="count" onclick="getitem(this)">add </button></td>
                 </tr>
                 <tr>
                     <td>onion</td>
                     <td>25 kg</td>
-                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                    <td> <button name="onion" id="count" onclick="getitem(this)">add </button></td>
                 </tr>
                 <tr>
                     <td>red capsicum</td>
                     <td>25 kg</td>
-                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                    <td> <button name="red capsicum" id="count" onclick="getitem(this)">add </button></td>
                 </tr>
                 <tr>
                     <td>patato</td>
                     <td>20 kg</td>
-                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                    <td> <button name="patato" id="count" onclick="getitem(this)">add </button></td>
                 </tr>
                 <tr>
                     <td>Capsicum</td>
                     <td>25 kg</td>
-                    <td> <input type="number" name="itemcount" id="count" value="0" min="0"></td>
+                    <td> <button name="Capsicum" id="count" onclick="getitem(this)">add </button></td>
                 </tr>
 
             </table>
-            <button class="addbtn" onclick="getitem()">add cart</button>
+            
+            
         </div>
 
-        <div class="cart">
+        <div class="cart" id="cart">
             <h1>Cart</h1>
+            <table id="cartTable">
+                <tr>
+                    <th>Item</th>
+                    <th>Edit</th >
+                </tr>
+                
+                
+
+                
+            </table>
         </div>
 
         
@@ -99,15 +110,29 @@
     <script>
         var itembox = document.getElementById("itembox")
         var cart = document.getElementById("cart")
+        
+        getitem = (element) =>{
+            getAmount =()=>{
+                
+            }
+            var cartTable = document.getElementById("cartTable")
+            var tableRow = document.createElement("tr")
+            tableRow.innerHTML =`<td> ${element.name}</td>
+                                 <td> <button name="${element.name}" onclick="removeitem(this)" > remove</button></td>`
 
-        getitem = () =>{
-            var itemcount = document.getElementById("count")
-            console.log(itemcount)
+                                 cartTable.appendChild(tableRow)
+            console.log(element)
+            console.log(element.value)
+
         }
 
-        additem = ()=>{
+        removeitem = (item)=>{
+            var rembtn = document.getElementById("remitm")
+            item.parentNode.parentNode.style.display="none";
+            // console.log(item.parentNode.parentNode.style.display="none";)
             
         }
+        
     </script>
 </body>
 
